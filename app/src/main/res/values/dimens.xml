@@ -3,5 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="actionBarH">48dp</dimen>
+
     <dimen name="login_margin">20dp</dimen>
 </resources>

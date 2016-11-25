@@ -10,9 +10,12 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import yunhen.searchj.R;
+import yunhen.searchj.utils.ViewUtil;
 
 
 /**
@@ -36,6 +39,10 @@ public abstract class BaseActivity<V,T extends BasePresenter<V>> extends AppComp
         setContentView(getLayoutId());
         ButterKnife.bind(this);
         mPresenter = createPresenter();
+        TextView tvTitle = ViewUtil.$(this, R.id.tvActionBarTitle);
+        if (tvTitle != null) {
+            tvTitle.setText(getTitleText());
+        }
         onCreate_(savedInstanceState);
     }
 
@@ -52,6 +59,8 @@ public abstract class BaseActivity<V,T extends BasePresenter<V>> extends AppComp
      * @return layout.xml
      */
     protected abstract int getLayoutId();
+
+    protected abstract String getTitleText();
 
     protected View getRootView() {
         return  LayoutInflater.from(BaseActivity.this).inflate(getLayoutId(),null);
@@ -73,4 +82,5 @@ public abstract class BaseActivity<V,T extends BasePresenter<V>> extends AppComp
         }
         act.startActivity(intent);
     }
+
 }

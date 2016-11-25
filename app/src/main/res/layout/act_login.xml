@@ -6,6 +6,8 @@
     android:paddingTop="30dp"
     >
 
+
+
     <EditText
         android:id="@+id/etUsername"
         android:hint="账号"
