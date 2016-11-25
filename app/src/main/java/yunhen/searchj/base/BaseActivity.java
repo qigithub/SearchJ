@@ -33,8 +33,8 @@ public abstract class BaseActivity<V,T extends BasePresenter<V>> extends AppComp
 //            this.getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark));
 //            getWindow().setNavigationBarColor(ContextCompat.getColor(getApplicationContext(),R.color.colorPrimaryDark));
         }
-        ButterKnife.bind(this);
         setContentView(getLayoutId());
+        ButterKnife.bind(this);
         mPresenter = createPresenter();
         onCreate_(savedInstanceState);
     }
@@ -53,47 +53,17 @@ public abstract class BaseActivity<V,T extends BasePresenter<V>> extends AppComp
      */
     protected abstract int getLayoutId();
 
-    ProgressDialog progressDialog;
-
-    protected void showProgressDialog(String msg, boolean cancel){
-        progressDialog = new ProgressDialog(BaseActivity.this);
-        if (msg == null)
-            msg = "正在加载...";
-        progressDialog.setMessage(msg);
-        progressDialog.setCancelable(cancel);
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                progressDialog.show();
-            }
-        });
-
-    }
-
-    protected void hideProgressDialog(){
-        if (progressDialog!= null && progressDialog.isShowing()){
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    progressDialog.dismiss();
-                }
-            });
-            progressDialog = null;
-        }
-
-    }
-
-    protected View getRootView(int viewGroupId) {
+    protected View getRootView() {
         return  LayoutInflater.from(BaseActivity.this).inflate(getLayoutId(),null);
     }
 
-    public static void launchAct(AppCompatActivity act,Class<?> targetAct) {
+    public static void launchAct(Context act,Class<?> targetAct) {
         launchAct(act,targetAct,null);
     }
-    public static void launchAct(AppCompatActivity act,Class<?> targetAct,Bundle bundle) {
+    public static void launchAct(Context act,Class<?> targetAct,Bundle bundle) {
         launchAct(act,targetAct,bundle,null);
     }
-    public static void launchAct(AppCompatActivity act,Class<?> targetAct,Bundle bundle,String action) {
+    public static void launchAct(Context act,Class<?> targetAct,Bundle bundle,String action) {
         Intent intent = new Intent(act,targetAct);
         if (bundle!= null){
             intent.putExtras(bundle);

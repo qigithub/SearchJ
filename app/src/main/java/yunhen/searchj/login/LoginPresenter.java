@@ -11,7 +11,9 @@ import butterknife.internal.Utils;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
+import yunhen.searchj.base.BaseActivity;
 import yunhen.searchj.base.BasePresenter;
+import yunhen.searchj.register.RegisterAct;
 
 public class LoginPresenter extends BasePresenter<ILogin> {
     private final String TAG=LoginPresenter.class.getSimpleName();
@@ -22,8 +24,7 @@ public class LoginPresenter extends BasePresenter<ILogin> {
     }
 
     public void toRegisterAct(){
-//        Intent intent = new Intent(iView.getContext(), RegisterActivity.class);
-//        iView.getContext().startActivity(intent);
+        BaseActivity.launchAct(iView.getContext(), RegisterAct.class);
     }
 
 

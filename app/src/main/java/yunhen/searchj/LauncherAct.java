@@ -28,9 +28,9 @@ public class LauncherAct extends AppCompatActivity {
             @Override
             public void call(Long aLong) {
                 if (UserUtils.userId(getApplicationContext()) == null || "".equals(UserUtils.userId(getApplicationContext()))) {
-                    BaseActivity.launchAct(LauncherAct.this, MainActivity.class);
-                } else {
                     BaseActivity.launchAct(LauncherAct.this, LoginAct.class);
+                } else {
+                    BaseActivity.launchAct(LauncherAct.this, MainActivity.class);
                 }
                 finish();
             }

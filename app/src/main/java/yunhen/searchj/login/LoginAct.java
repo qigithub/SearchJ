@@ -3,6 +3,8 @@ package yunhen.searchj.login;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import butterknife.BindView;
@@ -20,12 +22,13 @@ public class LoginAct extends BaseActivity<ILogin,LoginPresenter> implements ILo
     @BindView(R.id.etUsername)
     EditText etUsername;
 
-
-
     @BindView(R.id.etPwd)
     EditText etPwd;
 
-
+    @BindView(R.id.btnLogin)
+    Button btnLogin;
+    @BindView(R.id.btnRegister)
+    Button btnRegister;
 
     @Override
     protected LoginPresenter createPresenter() {
@@ -39,7 +42,19 @@ public class LoginAct extends BaseActivity<ILogin,LoginPresenter> implements ILo
 
     @Override
     protected void onCreate_(@Nullable Bundle savedInstanceState) {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mPresenter.toRegisterAct();
+            }
+        });
     }
 
     @Override
@@ -53,8 +68,8 @@ public class LoginAct extends BaseActivity<ILogin,LoginPresenter> implements ILo
     }
 
     @Override
-    public void showProgress() {
-        ViewUtil.createLoadingDialog(this,"加载中...",false);
+    public void showProgress(boolean isCancel) {
+        ViewUtil.createLoadingDialog(this,"加载中...",isCancel);
     }
 
     @Override

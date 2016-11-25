@@ -31,8 +31,8 @@ public class MainActivity extends BaseActivity<IMain,MainPresenter> implements  
     }
 
     @Override
-    public void showProgress() {
-        ViewUtil.createLoadingDialog(this,"加载中...",false);
+    public void showProgress(boolean cancel) {
+        ViewUtil.createLoadingDialog(this,"加载中...",cancel);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class MainActivity extends BaseActivity<IMain,MainPresenter> implements  
     }
     boolean isWaitingExit;
     private void firstClickBackKey() {
-        Snackbar.make(getRootView(R.id.mRootViewGroup),"再按退出",Snackbar.LENGTH_SHORT).show();
+        Snackbar.make(getRootView(),"再按退出",Snackbar.LENGTH_SHORT).show();
         isWaitingExit = true;
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {

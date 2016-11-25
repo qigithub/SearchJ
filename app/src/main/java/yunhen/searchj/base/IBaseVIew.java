@@ -9,6 +9,6 @@ import android.os.Bundle;
 public interface IBaseVIew {
     Context getContext();
     void showToast(String msg);
-    void showProgress();
+    void showProgress(boolean isCancel);
     void hideProgress();
 }

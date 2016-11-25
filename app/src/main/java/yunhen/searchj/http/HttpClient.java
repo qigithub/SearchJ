@@ -3,7 +3,6 @@ package yunhen.searchj.http;
 import android.content.Context;
 import android.util.Log;
 
-import com.umeng.analytics.MobclickAgent;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -95,7 +94,6 @@ public class HttpClient {
                     .client(okHttpClient)
                     .build();
         } catch (Exception e) {
-            MobclickAgent.reportError(context,e);
             e.printStackTrace();
         }
     }

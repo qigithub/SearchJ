@@ -2,12 +2,15 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:focusableInTouchMode="true"
+        android:focusable="true">
 
 
         <de.hdodenhof.circleimageview.CircleImageView
@@ -33,6 +36,7 @@
             android:layout_below="@id/etUsername"
             android:layout_marginTop="10dp"
             android:hint="密码"
+            android:inputType="textPassword"
             />
 
         <EditText
@@ -41,6 +45,7 @@
             android:layout_below="@id/etPwd"
             android:layout_marginTop="10dp"
             android:hint="再次确认密码"
+            android:inputType="textPassword"
             />
 
         <Button
