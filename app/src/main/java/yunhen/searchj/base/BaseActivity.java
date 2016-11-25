@@ -41,7 +41,7 @@ public abstract class BaseActivity<V,T extends BasePresenter<V>> extends AppComp
         mPresenter = createPresenter();
         TextView tvTitle = ViewUtil.$(this, R.id.tvActionBarTitle);
         if (tvTitle != null) {
-            tvTitle.setText(getTitleText());
+            tvTitle.setText(getTitleText()== null ?"" : getTitleText());
         }
         onCreate_(savedInstanceState);
     }

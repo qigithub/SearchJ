@@ -69,4 +69,9 @@ public class MainActivity extends BaseActivity<IMain,MainPresenter> implements  
             }
         }, 2000);
     }
+
+    @Override
+    protected String getTitleText() {
+        return null;
+    }
 }

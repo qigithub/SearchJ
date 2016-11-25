@@ -41,6 +41,11 @@ public class LoginAct extends BaseActivity<ILogin,LoginPresenter> implements ILo
     }
 
     @Override
+    protected String getTitleText() {
+        return "登陆";
+    }
+
+    @Override
     protected void onCreate_(@Nullable Bundle savedInstanceState) {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override

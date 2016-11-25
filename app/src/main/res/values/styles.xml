@@ -6,8 +6,8 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="BaseAppStyle">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorActionBarBgColor</item>
+        <item name="colorPrimaryDark">@color/colorActionBarBgColor</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/colorActBg</item>
     </style>

@@ -79,4 +79,9 @@ public class RegisterAct extends BaseActivity<IRegister,RegisterPresenter> imple
     public void hideProgress() {
         ViewUtil.cancelLoadingDialog();
     }
+
+    @Override
+    protected String getTitleText() {
+        return "注册";
+    }
 }
